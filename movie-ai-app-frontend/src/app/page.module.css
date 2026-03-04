@@ -1,0 +1,164 @@
+#app{
+    padding: 1rem;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#E0E7FF;
+    gap:2rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.appheading{
+    font-size: xx-large;
+    font-weight: bold;
+}
+#searchinput{
+    height: 2.5rem;
+    width: 20rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: none;
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+}
+#searchinput:focus{
+    outline: none;
+}
+.movie{
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+    gap:4rem;
+    max-width: 55rem;
+    background-color: #eef2ff;
+    padding: 1rem;
+    animation: fadein ease 0.6s forwards;
+    box-shadow:0 10px 18px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+}
+
+.movie img{
+    height: 100%;
+    width:20rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 12px 16px rgba(0,0,0,0.1),0 12px 16px rgba(0,0,0,0.1);
+}
+.movie img:hover{
+    transform: scale(1.02);
+}
+.movie-content{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    font-size: 1.15rem;
+}
+.movie-content .title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+.movie-content .plot,.movie-content .aisummary{
+    line-height: 1.4;
+}
+.movie-content .title, .rating{
+    color: #E50914;
+}
+.movie-content .key{
+    font-weight: bold;
+    color: black;
+}
+.searchbutton{
+    height: 2.5rem;
+    width:5rem;
+    background-color: #1f45fc;
+    border: none;
+    color: white;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.searchbutton:hover{
+    background-color: #6960ec;
+}
+.searchbutton:disabled{
+    background-color: #d3d3d3;
+    cursor:not-allowed
+}
+.movie-content .ai{
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+}
+.text{
+    margin-top: 10rem;
+    font-size: x-large;
+    color: navy;
+    text-align: center;
+    line-height: 1.6;
+}
+.error{
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:0.5rem;
+}
+.erroricon{
+  font-size: 2rem;
+}
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+@keyframes fadein{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:768px){
+    .movie{
+        gap:2rem;
+    }
+    .movie img{
+        width: 15rem;
+    }
+    .movie-content{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:640px){
+    .appheading{
+        font-size: x-large;
+    }
+    .movie{
+        flex-direction: column;
+    }
+    #searchinput{
+        width: 14.5rem;
+        height: 2rem;
+    }
+    .searchbutton{
+        width: 4rem;
+        height: 2rem;
+    }
+    
+}
