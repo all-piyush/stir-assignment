@@ -6,11 +6,12 @@ import router from './Routes/Route.js';
 const app=express();
 dotenv.config();
 app.use(cors({
-    origin:'http://localhost:3000',
+    origin:['http://localhost:3000','https://stir-assignment-seven.vercel.app'],
     credentials:true
 }))
 app.use(express.json());
-app.listen(process.env.PORT,()=>{
+const PORT=process.env.PORT||4000;
+app.listen(PORT,()=>{
     console.log(`app started at port ${process.env.PORT} ` );
 })
 app.get('/',(req,res)=>{

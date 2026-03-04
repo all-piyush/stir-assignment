@@ -17,7 +17,7 @@ export default function Home() {
     setresult('');
     seterror(null);
     setloading(true);
-    const req=await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/fetchdata/${search}`,{
+    const req=await fetch(`/api/v1/fetchdata/${search}`,{
       method:"GET",
       headers:{"Content-type":"application/json"},
       credentials:'include'
